@@ -1,0 +1,90 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.5.RELEASE)
+
+2023-04-27 10:42:28.212  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : Starting EntrevueApplication on DESKTOP-HLEEV64 with PID 10952 (C:\Users\Proprio\git\entrevue\target\classes started by Proprio in C:\Users\Proprio\git\entrevue)
+2023-04-27 10:42:28.214  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : No active profile set, falling back to default profiles: default
+2023-04-27 10:42:28.844  INFO 10952 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2023-04-27 10:42:28.873  INFO 10952 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 1 repository interfaces.
+2023-04-27 10:42:29.132  INFO 10952 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$588dc9a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-04-27 10:42:29.431  INFO 10952 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-27 10:42:29.446  INFO 10952 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-27 10:42:29.447  INFO 10952 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2023-04-27 10:42:29.519  INFO 10952 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-04-27 10:42:29.519  INFO 10952 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1279 ms
+2023-04-27 10:42:29.952  INFO 10952 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-27 10:42:30.058  INFO 10952 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-27 10:42:30.127  INFO 10952 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2023-04-27 10:42:30.173  INFO 10952 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.10.Final}
+2023-04-27 10:42:30.174  INFO 10952 --- [           main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2023-04-27 10:42:30.263  INFO 10952 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2023-04-27 10:42:30.364  INFO 10952 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-27 10:42:30.673  INFO 10952 --- [           main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@6f430ea8'
+2023-04-27 10:42:30.674  INFO 10952 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 10:42:30.677  INFO 10952 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static service.EmailServiceImpl ca.levio.entrevue.EntrevueApplication.emailService
+2023-04-27 10:42:30.949  INFO 10952 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-04-27 10:42:30.983  WARN 10952 --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-27 10:42:31.184  INFO 10952 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2023-04-27 10:42:31.261  INFO 10952 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-27 10:42:31.263  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : Started EntrevueApplication in 3.27 seconds (JVM running for 3.504)
+2023-04-27 10:42:31.346  INFO 10952 --- [           main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2023-04-27 10:42:31.384  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : The referent is: Referent{id=1, name='Jean}
+2023-04-27 10:42:31.385  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : The referent is: Referent{id=2, name='Paul}
+2023-04-27 10:42:31.385  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : The referent is: Referent{id=3, name='Donald}
+2023-04-27 10:42:31.385  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : The referent is: Referent{id=4, name='Marc}
+DEBUG: Jakarta Mail version 1.6.7
+DEBUG: successfully loaded resource: /META-INF/javamail.default.providers
+DEBUG: Tables of loaded providers
+DEBUG: Providers Listed By Class Name: {com.sun.mail.smtp.SMTPTransport=javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle], com.sun.mail.imap.IMAPSSLStore=javax.mail.Provider[STORE,imaps,com.sun.mail.imap.IMAPSSLStore,Oracle], com.sun.mail.pop3.POP3Store=javax.mail.Provider[STORE,pop3,com.sun.mail.pop3.POP3Store,Oracle], com.sun.mail.smtp.SMTPSSLTransport=javax.mail.Provider[TRANSPORT,smtps,com.sun.mail.smtp.SMTPSSLTransport,Oracle], com.sun.mail.imap.IMAPStore=javax.mail.Provider[STORE,imap,com.sun.mail.imap.IMAPStore,Oracle], com.sun.mail.pop3.POP3SSLStore=javax.mail.Provider[STORE,pop3s,com.sun.mail.pop3.POP3SSLStore,Oracle]}
+DEBUG: Providers Listed By Protocol: {imap=javax.mail.Provider[STORE,imap,com.sun.mail.imap.IMAPStore,Oracle], smtp=javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle], pop3=javax.mail.Provider[STORE,pop3,com.sun.mail.pop3.POP3Store,Oracle], imaps=javax.mail.Provider[STORE,imaps,com.sun.mail.imap.IMAPSSLStore,Oracle], smtps=javax.mail.Provider[TRANSPORT,smtps,com.sun.mail.smtp.SMTPSSLTransport,Oracle], pop3s=javax.mail.Provider[STORE,pop3s,com.sun.mail.pop3.POP3SSLStore,Oracle]}
+DEBUG: successfully loaded resource: /META-INF/javamail.default.address.map
+DEBUG: getProvider() returning javax.mail.Provider[TRANSPORT,smtp,com.sun.mail.smtp.SMTPTransport,Oracle]
+DEBUG SMTP: useEhlo true, useAuth false
+DEBUG SMTP: trying to connect to host "localhost", port 587, isSSL false
+220 DESKTOP-HLEEV64.mshome.net ESMTP SubEthaSMTP null
+DEBUG SMTP: connected to host "localhost", port: 587
+EHLO DESKTOP-HLEEV64.mshome.net
+250-DESKTOP-HLEEV64.mshome.net
+250-8BITMIME
+250-AUTH LOGIN
+250 Ok
+DEBUG SMTP: Found extension "8BITMIME", arg ""
+DEBUG SMTP: Found extension "AUTH", arg "LOGIN"
+DEBUG SMTP: Found extension "Ok", arg ""
+DEBUG SMTP: protocolConnect login, host=localhost, user=bertrand.szoghy@levio.ca, password=<non-null>
+DEBUG SMTP: Attempt to authenticate using mechanisms: LOGIN PLAIN DIGEST-MD5 NTLM XOAUTH2 
+DEBUG SMTP: Using mechanism LOGIN
+DEBUG SMTP: AUTH LOGIN command trace suppressed
+DEBUG SMTP: AUTH LOGIN succeeded
+DEBUG SMTP: use8bit false
+MAIL FROM:<bertrand.szpghy@levio.ca>
+250 Ok
+RCPT TO:<bertrandszoghy@gmail.com>
+250 Ok
+DEBUG SMTP: Verified Addresses
+DEBUG SMTP:   bertrandszoghy@gmail.com
+DATA
+354 End data with <CR><LF>.<CR><LF>
+Date: Thu, 27 Apr 2023 10:42:31 -0400 (EDT)
+From: bertrand.szpghy@levio.ca
+To: bertrandszoghy@gmail.com
+Message-ID: <771840705.0.1682606551446@DESKTOP-HLEEV64.mshome.net>
+Subject: test email
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+test subject
+.
+250 Ok
+DEBUG SMTP: message successfully delivered to mail server
+QUIT
+221 Bye
+2023-04-27 10:42:31.483  INFO 10952 --- [           main] ca.levio.entrevue.EntrevueApplication    : Email sent status is: sent

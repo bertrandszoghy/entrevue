@@ -2,6 +2,7 @@ package ca.levio.entrevue;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,14 +10,23 @@ import org.springframework.context.annotation.Bean;
 
 import ca.levio.entrevue.entity.Referent;
 import ca.levio.entrevue.repository.ReferentRepository;
+import service.EmailService;
+import service.EmailServiceImpl;
 
 @SpringBootApplication
 public class EntrevueApplication {
 	
 	private static final Logger log = LoggerFactory.getLogger(EntrevueApplication.class);
+	@Autowired 
+	private static EmailServiceImpl emailService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EntrevueApplication.class, args);
+				
+		emailService = new EmailServiceImpl();
+		String status = emailService.sendSimpleMessage("bertrandszoghy@gmail.com","test email","test subject");
+		log.info("Email sent status is: " + status);
+		
 	}
 	
 	@Bean
