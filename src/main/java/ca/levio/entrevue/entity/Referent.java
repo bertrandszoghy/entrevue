@@ -14,18 +14,18 @@ public class Referent {
     private String lastName;
     private String emailAddress;
     private boolean active;
-    private Integer roleId;
+    private String expertise;
 
     public Referent() {
     }
 
-    public Referent(Integer id, String firstName, String lastName, String emailAddress, boolean active, Integer roleId){
+    public Referent(Integer id, String firstName, String lastName, String emailAddress, boolean active, String expertise){
     	this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
         this.active = active;
-        this.roleId = roleId;
+        this.expertise = expertise;
     }
 
 	public Integer getId() {
@@ -68,18 +68,21 @@ public class Referent {
 		this.active = active;
 	}
 
-	public Integer getRoleId() {
-		return roleId;
+	public String getExpertise() {
+		return expertise;
 	}
 
-	public void setRoleId(Integer roleId) {
-		this.roleId = roleId;
+	public void setExpertise(String expertise) {
+		this.expertise = expertise;
 	}
-	
+
 	@Override
     public String toString() {
         return "Referent{" +
                 "id=" + id +
-                ", name='" + firstName + '}';
+                ", name=" + firstName + " " + lastName +
+                ", expertise= " + expertise +
+                ", email= " + emailAddress +
+                '}';
     }
 }
