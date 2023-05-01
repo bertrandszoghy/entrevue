@@ -2,6 +2,7 @@ package ca.levio.entrevue;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.slf4j.Logger;
@@ -41,6 +42,7 @@ public class EntrevueApplication {
 		
 	}
 	
+	// create in-memory database with entity and repository
 	@Bean
 	public CommandLineRunner commandlineRunner(ReferentRepository referentRepository) {
 		
@@ -106,17 +108,18 @@ public class EntrevueApplication {
 			return response; 
 		}
 		
-		// provide a job candidate's expertise and return a complete list of persons who could interview him 
+		// provide a job candidate's expertise and return all persons who 
+		// could interview him. 
 		// parameter must be in the ENUMs of ca.levio.entrevue.ExpertiseType
 		// i.e. JUNIOR, INTERMEDIAIRE, SENIOR, EMERITE
-		// http://localhost:8080/demande/INTERMEDIAIRE
+		// example: http://localhost:8080/demande/INTERMEDIAIRE
 		@GetMapping("/demande/{expertise}")
 	    public String getListReferents(@PathVariable("expertise") String expertise) {
 			String result = null;
 			for (ExpertiseType expertiseType : ExpertiseType.values()) {
 		        if (expertiseType.name().equalsIgnoreCase(expertise)) {
-		            result = expertise;
-		            log.info("The candidate's expertise is: " + expertise);
+		            result = "The candidate's expertise is: " + expertise + "<br>";
+		            log.info(result);
 		            break;
 		        }
 		    }	
@@ -126,9 +129,46 @@ public class EntrevueApplication {
 				return result;
 			}
 			
+			List<Referent> listReferents = new ArrayList<Referent>(); 
 			
+			for (Referent referent : referentRepository.findAll()) {			
+				
+				if((!referent.isActive()) && (!referent.getExpertise().equals("JUNIOR"))){
+					
+					if(expertise.equals("JUNIOR")) {
+						listReferents.add(referent);
+					}
+					else if(expertise.equals("INTERMEDIAIRE")) {
+						if((referent.getExpertise().equals("SENIOR")) || referent.getExpertise().equals("EMERITE")) {
+							listReferents.add(referent);
+						}
+					}
+					else {
+						if(referent.getExpertise().equals("EMERITE")) {
+							listReferents.add(referent);
+						}
+					}
+				}
+			}
+			
+			
+			// now all you need is to randomly choose in listReferents to get two appropriate referents
+			Random rand = new Random();
+			int numberOfReferents = 2;
+			if(listReferents.size()>= numberOfReferents)  {
+				 
+
+				    for (int i = 0; i < numberOfReferents; i++) {
+				        int randomIndex = rand.nextInt(listReferents.size());
+				        Referent randomReferent = listReferents.get(randomIndex);
+				        listReferents.remove(randomIndex);
+				        result += "This referent can interview: " + randomReferent.getFirstName() + " " + randomReferent.getLastName() + " " + randomReferent.getExpertise() + " " + randomReferent.getEmailAddress() + "<br>";
+				    }
+				
+			}
 			
 			return result;
 	    }
 	}
+	
 }
